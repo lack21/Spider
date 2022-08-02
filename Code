@@ -1,0 +1,807 @@
+# lear
+# Spider
+
+# Welcome to the Spider game
+# This game is made in pygame
+
+import pygame
+import random as rd
+
+if __name__ == "__main__":
+    pygame.init()
+
+    # Screen
+    WIDTH = 1200
+    HEIGHT = 800
+
+    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
+    # Background
+    background = pygame.image.load("spi_cave.jpg")
+    background_2 = pygame.image.load("spi_cave_2.jpg")
+
+    BK = True
+
+    # Title
+    pygame.display.set_caption("Spider Cave")
+
+    # Icon
+    icon = pygame.image.load("spider_icon.png")
+
+    pygame.display.set_icon(icon)
+
+
+    # Spider
+    class Spider:
+        def __init__(self, spider, spider_X, spider_Y):
+            self.spider = spider
+
+            self.spider_X = spider_X
+            self.spider_Y = spider_Y
+
+        def get_spidy(self):
+            screen.blit(self.spider, (self.spider_X, self.spider_Y))
+
+    Spider_IMG = pygame.image.load("spider_left.png")
+    Spider_X = 500
+    Spider_Y = 330
+
+    movement_X = 0
+    movement_Y = 0
+
+    SPIDY = Spider(Spider_IMG, Spider_X, Spider_Y)
+
+
+    # Food
+    class Food:
+        def __init__(self, fly, fly_X, fly_Y):
+            self.fly = fly
+            self.fly_X = fly_X
+            self.fly_Y = fly_Y
+
+        def get_fly(self):
+            screen.blit(self.fly, (self.fly_X, self.fly_Y))
+
+    fly = pygame.image.load("fly.png")
+    fly_x = rd.randint(100, 1100)
+    fly_y = rd.randint(100, 700)
+
+    Fly = Food(fly, fly_x, fly_y)
+
+    # Enemy
+    class Enemy:
+        def __init__(self, enemy, enemy_X, enemy_Y, enemy_bullet, enemy_bullet_X, enemy_bullet_Y, enemy_2, enemy_2_X, enemy_2_Y, enemy_bullet_2, enemy_bullet_2_X, enemy_bullet_2_Y, enemy_3, enemy_3_X, enemy_3_Y, enemy_bullet_3, enemy_bullet_3_X, enemy_bullet_3_Y, enemy_4, enemy_4_X, enemy_4_Y, enemy_bullet_4, enemy_bullet_4_X, enemy_bullet_4_Y, enemy_5, enemy_5_X, enemy_5_Y, enemy_bullet_5_1, enemy_bullet_5_1_X, enemy_bullet_5_1_Y, enemy_bullet_5_2, enemy_bullet_5_2_X, enemy_bullet_5_2_Y, enemy_bullet_5_3, enemy_bullet_5_3_X, enemy_bullet_5_3_Y, enemy_bullet_5_4, enemy_bullet_5_4_X, enemy_bullet_5_4_Y):
+            self.enemy = enemy
+            self.enemy_X = enemy_X
+            self.enemy_Y = enemy_Y
+            self.enemy_bullet = enemy_bullet
+            self.enemy_bullet_X = enemy_bullet_X
+            self.enemy_bullet_Y = enemy_bullet_Y
+
+            self.enemy_2 = enemy_2
+            self.enemy_2_X = enemy_2_X
+            self.enemy_2_Y = enemy_2_Y
+            self.enemy_bullet_2 = enemy_bullet_2
+            self.enemy_bullet_2_X = enemy_bullet_2_X
+            self.enemy_bullet_2_Y = enemy_bullet_2_Y
+
+            self.enemy_3 = enemy_3
+            self.enemy_3_X = enemy_3_X
+            self.enemy_3_Y = enemy_3_Y
+            self.enemy_bullet_3 = enemy_bullet_3
+            self.enemy_bullet_3_X = enemy_bullet_3_X
+            self.enemy_bullet_3_Y = enemy_bullet_3_Y
+
+            self.enemy_4 = enemy_4
+            self.enemy_4_X = enemy_4_X
+            self.enemy_4_Y = enemy_4_Y
+            self.enemy_bullet_4 = enemy_bullet_4
+            self.enemy_bullet_4_X = enemy_bullet_4_X
+            self.enemy_bullet_4_Y = enemy_bullet_4_Y
+
+            self.enemy_5 = enemy_5
+            self.enemy_5_X = enemy_5_X
+            self.enemy_5_Y = enemy_5_Y
+
+            self.enemy_bullet_5_1 = enemy_bullet_5_1
+            self.enemy_bullet_5_1_X = enemy_bullet_5_1_X
+            self.enemy_bullet_5_1_Y = enemy_bullet_5_1_Y
+
+            self.enemy_bullet_5_2 = enemy_bullet_5_2
+            self.enemy_bullet_5_2_X = enemy_bullet_5_2_X
+            self.enemy_bullet_5_2_Y = enemy_bullet_5_2_Y
+
+            self.enemy_bullet_5_3 = enemy_bullet_5_3
+            self.enemy_bullet_5_3_X = enemy_bullet_5_3_X
+            self.enemy_bullet_5_3_Y = enemy_bullet_5_3_Y
+
+            self.enemy_bullet_5_4 = enemy_bullet_5_4
+            self.enemy_bullet_5_4_X = enemy_bullet_5_4_X
+            self.enemy_bullet_5_4_Y = enemy_bullet_5_4_Y
+
+
+        def get_enemy_1(self):
+            screen.blit(self.enemy, (self.enemy_X, self.enemy_Y))
+
+        def get_bullet_1(self):
+            screen.blit(self.enemy_bullet, (self.enemy_bullet_X, self.enemy_bullet_Y))
+
+
+        def get_enemy_2(self):
+            screen.blit(self.enemy_2, (self.enemy_2_X, self.enemy_2_Y))
+
+        def get_bullet_2(self):
+            screen.blit(self.enemy_bullet_2, (self.enemy_bullet_2_X, self.enemy_bullet_2_Y))
+
+        
+        def get_enemy_3(self):
+            screen.blit(self.enemy_3, (self.enemy_3_X, self.enemy_3_Y))
+
+        def get_bullet_3(self):
+            screen.blit(self.enemy_bullet_3, (self.enemy_bullet_3_X, self.enemy_bullet_3_Y))
+
+
+        def get_enemy_4(self):
+            screen.blit(self.enemy_4, (self.enemy_4_X, self.enemy_4_Y))
+
+        def get_bullet_4(self):
+            screen.blit(self.enemy_bullet_4, (self.enemy_bullet_4_X, self.enemy_bullet_4_Y))
+
+
+        def get_enemy_5(self):
+            screen.blit(self.enemy_5, (self.enemy_5_X, self.enemy_5_Y))
+
+        def get_bullet_5_1(self):
+            screen.blit(self.enemy_bullet_5_1, (self.enemy_bullet_5_1_X, self.enemy_bullet_5_1_Y))
+
+        def get_bullet_5_2(self):
+            screen.blit(self.enemy_bullet_5_2, (self.enemy_bullet_5_2_X, self.enemy_bullet_5_2_Y))
+
+        def get_bullet_5_3(self):
+            screen.blit(self.enemy_bullet_5_3, (self.enemy_bullet_5_3_X, self.enemy_bullet_5_3_Y))
+
+        def get_bullet_5_4(self):
+            screen.blit(self.enemy_bullet_5_4, (self.enemy_bullet_5_4_X, self.enemy_bullet_5_4_Y))
+
+
+    enemy = pygame.image.load("robot_1.png")
+    enemy_x = rd.randint(100, 1100)
+    enemy_y = rd.randint(100, 700)
+
+    bullet = pygame.image.load("bullet.png")
+    bullet_x = enemy_x + 16
+    bullet_y = enemy_y + 16
+
+    bullet_X_movement = 0
+    bullet_Y_movement = 0
+
+    bul_mov = rd.randint(1, 4)
+
+
+    enemy_2 = pygame.image.load("robot_2.png")
+    enemy_2_x = rd.randint(100, 1100)
+    enemy_2_y = rd.randint(100, 700)
+
+    bullet_2 = pygame.image.load("bullet_2.png")
+    bullet_2_x = enemy_2_x + 16
+    bullet_2_y = enemy_2_y + 16
+
+    bullet_2_X_movement = 0
+    bullet_2_Y_movement = 0
+
+    bul_mov_2 = rd.randint(1, 4)
+
+
+    enemy_3 = pygame.image.load("robot_1.png")
+    enemy_3_x = rd.randint(100, 1100)
+    enemy_3_y = rd.randint(100, 700)
+
+    bullet_3 = pygame.image.load("bullet.png")
+    bullet_3_x = enemy_x + 16
+    bullet_3_y = enemy_y + 16
+
+    bullet_3_X_movement = 0
+    bullet_3_Y_movement = 0
+
+    bul_mov_3 = rd.randint(1, 4)
+
+
+    enemy_4 = pygame.image.load("robot_2.png")
+    enemy_4_x = rd.randint(100, 1100)
+    enemy_4_y = rd.randint(100, 700)
+
+    bullet_4 = pygame.image.load("bullet_2.png")
+    bullet_4_x = enemy_2_x + 16
+    bullet_4_y = enemy_2_y + 16
+
+    bullet_4_X_movement = 0
+    bullet_4_Y_movement = 0
+
+    bul_mov_4 = rd.randint(1, 4)
+
+
+    enemy_5 = pygame.image.load("robot_3.png")
+    enemy_5_x = rd.randint(300, 900)
+    enemy_5_y = rd.randint(200, 600)
+
+    bullet_5_1 = pygame.image.load("bullet_3.png")
+    bullet_5_1_x = enemy_5_x + 16
+    bullet_5_1_y = enemy_5_y + 16
+
+
+    bullet_5_2 = pygame.image.load("bullet_3.png")
+    bullet_5_2_x = enemy_5_x + 16
+    bullet_5_2_y = enemy_5_y + 16
+
+
+    bullet_5_3 = pygame.image.load("bullet_3.png")
+    bullet_5_3_x = enemy_5_x + 16
+    bullet_5_3_y = enemy_5_y + 16
+
+
+    bullet_5_4 = pygame.image.load("bullet_3.png")
+    bullet_5_4_x = enemy_5_x + 16
+    bullet_5_4_y = enemy_5_y + 16
+
+
+    OPPO = Enemy(enemy, enemy_x, enemy_y, bullet, bullet_x, bullet_y, enemy_2, enemy_2_x, enemy_2_y, bullet_2, bullet_2_x, bullet_2_y, enemy_3, enemy_3_x, enemy_3_y, bullet_3, bullet_3_x, bullet_3_y, enemy_4, enemy_4_x, enemy_4_y, bullet_4, bullet_4_x, bullet_4_y, enemy_5, enemy_5_x, enemy_5_y, bullet_5_1, bullet_5_1_x, bullet_5_1_y, bullet_5_2, bullet_5_2_x, bullet_5_2_y, bullet_5_3, bullet_5_3_x, bullet_5_3_y, bullet_5_4, bullet_5_4_x, bullet_5_4_y)
+
+
+    # Abilities
+    class Abilities:
+        def __init__(self, crystal, crystal_X, crystal_Y, double_heart, teleport, barrier, barrier_X, barrier_Y, barrier_icon):
+            self.crystal = crystal
+            self.crystal_X = crystal_X
+            self.crystal_Y = crystal_Y
+
+            self.double_heart = double_heart
+
+            self.teleport = teleport
+
+            self.barrier = barrier
+            self.barrier_X = barrier_X
+            self.barrier_Y = barrier_Y
+            self.barrier_icon = barrier_icon
+
+        def get_crystal(self):
+            screen.blit(self.crystal, (self.crystal_X, self.crystal_Y))
+
+        def get_double_heart(self):
+            screen.blit(self.double_heart, (150, 30))
+
+        def get_teleport(self):
+            screen.blit(self.teleport, (1060, 30))
+
+        def get_barrier(self):
+            screen.blit(self.barrier, (self.barrier_X, self.barrier_Y))
+
+        def get_barrier_icon(self):
+            screen.blit(self.barrier_icon, (1060, 30))
+
+    crystal = pygame.image.load("crystal.png")
+    crystal_x = rd.randint(100, 1100)
+    crystal_y = rd.randint(100, 700)
+
+    double_heart = pygame.image.load("heart.png")
+
+    teleport = pygame.image.load("teleport_icon.png")
+
+    barrier = pygame.image.load("shield.png")
+    barrier_x = SPIDY.spider_X
+    barrier_y = SPIDY.spider_Y
+    barrier_icon = pygame.image.load("shield_icon.png")
+
+    ABB = True
+
+    CR = False
+    ACR = True
+
+    DB = False
+
+    TL = False
+
+    BR = False
+    BR_I = False
+
+    choice = rd.randint(1, 3)
+
+    ABI = Abilities(crystal, crystal_x, crystal_y, double_heart, teleport, barrier, barrier_x, barrier_y, barrier_icon)
+
+
+    # Statistics
+    text_score = pygame.font.Font("freesansbold.ttf", 52)
+
+    class Statistics:
+        def __init__(self, heart, dark_heart, score):
+            self.heart = heart
+            self.dark_heart = dark_heart
+
+            self.score = score
+
+        def get_heart_1(self):
+            screen.blit(self.heart, (30, 30))
+
+        def get_heart_2(self):
+            screen.blit(self.heart, (70, 30))
+
+        def get_heart_3(self):
+            screen.blit(self.heart, (110, 30))
+
+        
+        def get_dark_heart_1(self):
+            screen.blit(self.dark_heart, (30, 30))
+
+        def get_dark_heart_2(self):
+            screen.blit(self.dark_heart, (70, 30))
+
+        def get_dark_heart_3(self):
+            screen.blit(self.dark_heart, (110, 30))
+
+        
+        def get_score(self):
+            score_text = text_score.render(f"Score : {str(self.score)}", True, (100, 40, 140))
+            screen.blit(score_text, (480, 25))
+
+    heart = pygame.image.load("heart.png")
+    dark_heart = pygame.image.load("dark_heart.png")
+
+    score = 0
+    health = 3
+
+    Special = Statistics(heart, dark_heart, score)
+
+    # End
+    class Ending:
+        def __init__(self, gameover, winning):
+            self.gameover = gameover
+            self.winning = winning
+
+        def get_game_over(self):
+            game_over_text = self.gameover.render("Game Over!", True, (150, 20, 60))
+            screen.blit(game_over_text, (430, 350))
+
+        def get_win(self):
+            winning_text = self.winning.render("You Win!", True, (60, 20, 150))
+            screen.blit(winning_text, (450, 350))
+
+    win = pygame.font.Font("freesansbold.ttf", 60)
+    lose = pygame.font.Font("freesansbold.ttf", 60)
+
+    End = Ending(win, lose)
+
+
+    # Sound
+    WINNING = pygame.mixer.Sound("TTT_win.wav")
+    LOSING = pygame.mixer.Sound("losing.wav")
+    GET_HITTED = pygame.mixer.Sound("get_punched.wav")
+    EAT_FLY = pygame.mixer.Sound("eating.wav")
+
+    TAKING_TELEPORT = pygame.mixer.Sound("taking_teleport.wav")
+    USING_TELEPORT = pygame.mixer.Sound("using_teleport.wav")
+    TAKING_HEART = pygame.mixer.Sound("taking_heart.wav")
+    TAKING_SHIELD = pygame.mixer.Sound("taking_shield.wav")
+    USING_SHIELD = pygame.mixer.Sound("using_shield.wav")
+
+    WN = True
+    LS = True
+
+    TT = True
+    TS = True
+    TS_2 = True
+
+
+    DONE = False
+
+    running = True
+    while running:
+        if BK:
+            screen.blit(background, (0, 0))
+
+        else:
+            screen.blit(background_2, (0, 0))
+
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    running = False
+
+                if event.key == pygame.K_p:
+                    BK = not(BK)
+                if not(DONE):
+                    if event.key == pygame.K_LEFT and SPIDY.spider_X > 0:
+                        SPIDY.spider = pygame.image.load("spider_left.png")
+                        movement_X = -0.8
+
+                    if event.key == pygame.K_RIGHT and SPIDY.spider_X < 1134:
+                        SPIDY.spider = pygame.image.load("spider_right.png")
+                        movement_X = 0.8
+
+                    if event.key == pygame.K_UP and SPIDY.spider_Y > 0:
+                        SPIDY.spider = pygame.image.load("spider_up.png")
+                        movement_Y = -0.8
+
+                    if event.key == pygame.K_DOWN and SPIDY.spider_Y < 734:
+                        SPIDY.spider = pygame.image.load("spider_down.png")
+                        movement_Y = 0.8
+
+                    if event.key == pygame.K_SPACE and TL:
+                        SPIDY.spider_X = rd.randint(100, 1100)
+                        SPIDY.spider_Y = rd.randint(100, 700)
+                        USING_TELEPORT.play()
+                        TL = False
+                        ABB = False
+
+                    if event.key == pygame.K_SPACE and BR_I:
+                        BR = True
+                        BR_I = False
+                        ABB = False
+
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                    movement_X = 0
+
+                if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
+                    movement_Y = 0
+
+        SPIDY.spider_X += movement_X
+        SPIDY.spider_Y += movement_Y
+
+        if SPIDY.spider_X < 0 or SPIDY.spider_X > 1134:
+            movement_X = 0
+
+        if SPIDY.spider_Y < 0 or SPIDY.spider_Y > 734:
+            movement_Y = 0
+
+        if not(DONE):
+            OPPO.enemy_bullet_X += bullet_X_movement
+            OPPO.enemy_bullet_Y += bullet_Y_movement
+
+        if bul_mov == 1:
+            bullet_X_movement = 1
+            bullet_Y_movement = 1
+
+        elif bul_mov == 2:
+            bullet_X_movement = 1
+            bullet_Y_movement = -1
+
+        elif bul_mov == 3:
+            bullet_X_movement = -1
+            bullet_Y_movement = 1
+
+        else:
+            bullet_X_movement = -1
+            bullet_Y_movement = -1
+
+        if OPPO.enemy_bullet_X > 1200 or OPPO.enemy_bullet_X < 0 or OPPO.enemy_bullet_Y > 800 or OPPO.enemy_bullet_Y < 0:
+            OPPO.enemy_bullet_X = OPPO.enemy_X + 16
+            OPPO.enemy_bullet_Y = OPPO.enemy_Y + 16
+            bul_mov = rd.randint(1, 4)
+
+        if Special.score >= 10:
+            OPPO.get_bullet_2()
+            OPPO.get_enemy_2()
+
+            if not(DONE):
+                OPPO.enemy_bullet_2_X += bullet_2_X_movement
+                OPPO.enemy_bullet_2_Y += bullet_2_Y_movement
+
+            if bul_mov_2 == 1:
+                bullet_2_X_movement = 1
+                bullet_2_Y_movement = 0
+
+            elif bul_mov_2 == 2:
+                bullet_2_X_movement = 0
+                bullet_2_Y_movement = -1
+
+            elif bul_mov_2 == 3:
+                bullet_2_X_movement = -1
+                bullet_2_Y_movement = 0
+
+            else:
+                bullet_2_X_movement = 0
+                bullet_2_Y_movement = 1
+
+            if OPPO.enemy_bullet_2_X > 1200 or OPPO.enemy_bullet_2_X < 0 or OPPO.enemy_bullet_2_Y > 800 or OPPO.enemy_bullet_2_Y < 0:
+                OPPO.enemy_bullet_2_X = OPPO.enemy_2_X + 16
+                OPPO.enemy_bullet_2_Y = OPPO.enemy_2_Y + 16
+                bul_mov_2 = rd.randint(1, 4)
+
+        
+        if Special.score >= 20:
+            OPPO.get_bullet_3()
+            OPPO.get_enemy_3()
+
+            if not(DONE):
+                OPPO.enemy_bullet_3_X += bullet_3_X_movement
+                OPPO.enemy_bullet_3_Y += bullet_3_Y_movement
+
+            if bul_mov_3 == 1:
+                bullet_3_X_movement = 1
+                bullet_3_Y_movement = 1
+
+            elif bul_mov_3 == 2:
+                bullet_3_X_movement = 1
+                bullet_3_Y_movement = -1
+
+            elif bul_mov_3 == 3:
+                bullet_3_X_movement = -1
+                bullet_3_Y_movement = 1
+
+            else:
+                bullet_3_X_movement = -1
+                bullet_3_Y_movement = -1
+
+            if OPPO.enemy_bullet_3_X > 1200 or OPPO.enemy_bullet_3_X < 0 or OPPO.enemy_bullet_3_Y > 800 or OPPO.enemy_bullet_3_Y < 0:
+                OPPO.enemy_bullet_3_X = OPPO.enemy_3_X + 16
+                OPPO.enemy_bullet_3_Y = OPPO.enemy_3_Y + 16
+                bul_mov_3 = rd.randint(1, 4)
+
+        
+        if Special.score >= 30:
+            OPPO.get_bullet_4()
+            OPPO.get_enemy_4()
+            
+            if not(DONE):
+                OPPO.enemy_bullet_4_X += bullet_4_X_movement
+                OPPO.enemy_bullet_4_Y += bullet_4_Y_movement
+
+            if bul_mov_4 == 1:
+                bullet_4_X_movement = 1
+                bullet_4_Y_movement = 0
+
+            elif bul_mov_4 == 2:
+                bullet_4_X_movement = 0
+                bullet_4_Y_movement = -1
+
+            elif bul_mov_4 == 3:
+                bullet_4_X_movement = -1
+                bullet_4_Y_movement = 0
+
+            else:
+                bullet_4_X_movement = 0
+                bullet_4_Y_movement = 1
+
+            if OPPO.enemy_bullet_4_X > 1200 or OPPO.enemy_bullet_4_X < 0 or OPPO.enemy_bullet_4_Y > 800 or OPPO.enemy_bullet_4_Y < 0:
+                OPPO.enemy_bullet_4_X = OPPO.enemy_4_X + 16
+                OPPO.enemy_bullet_4_Y = OPPO.enemy_4_Y + 16
+                bul_mov_4 = rd.randint(1, 4)
+
+        if Special.score >= 40:
+            OPPO.get_bullet_5_1()
+            OPPO.get_bullet_5_2()
+            OPPO.get_bullet_5_3()
+            OPPO.get_bullet_5_4()
+            OPPO.get_enemy_5()
+
+            if not(DONE):
+                OPPO.enemy_bullet_5_1_X += 1
+                OPPO.enemy_bullet_5_2_X -= 1
+                OPPO.enemy_bullet_5_3_Y += 1
+                OPPO.enemy_bullet_5_4_Y -= 1
+
+            if OPPO.enemy_bullet_5_1_X > 1200:
+                OPPO.enemy_bullet_5_1_X = OPPO.enemy_5_X + 16
+
+            if OPPO.enemy_bullet_5_2_X < 0:
+                OPPO.enemy_bullet_5_2_X = OPPO.enemy_5_X + 16
+
+            if OPPO.enemy_bullet_5_3_Y > 800:
+                OPPO.enemy_bullet_5_3_Y = OPPO.enemy_5_Y + 16
+
+            if OPPO.enemy_bullet_5_4_Y < 0:
+                OPPO.enemy_bullet_5_4_Y = OPPO.enemy_5_Y + 16
+
+        # Health Down
+        if SPIDY.spider_X - 12 < OPPO.enemy_bullet_X and SPIDY.spider_X + 18 > OPPO.enemy_bullet_X and SPIDY.spider_Y - 12 < OPPO.enemy_bullet_Y and SPIDY.spider_Y + 18 > OPPO.enemy_bullet_Y:
+            health -= 1
+
+            OPPO.enemy_bullet_X = OPPO.enemy_X + 16
+            OPPO.enemy_bullet_Y = OPPO.enemy_Y + 16
+
+            bul_mov = rd.randint(1, 4)
+            GET_HITTED.play()
+
+        if Special.score >= 10 and SPIDY.spider_X - 12 < OPPO.enemy_bullet_2_X and SPIDY.spider_X + 18 > OPPO.enemy_bullet_2_X and SPIDY.spider_Y - 12 < OPPO.enemy_bullet_2_Y and SPIDY.spider_Y + 18 > OPPO.enemy_bullet_2_Y:
+            health -= 1
+
+            OPPO.enemy_bullet_2_X = OPPO.enemy_2_X + 16
+            OPPO.enemy_bullet_2_Y = OPPO.enemy_2_Y + 16
+
+            bul_mov_2 = rd.randint(1, 4)
+            GET_HITTED.play()
+
+        if Special.score >= 20 and SPIDY.spider_X - 12 < OPPO.enemy_bullet_3_X and SPIDY.spider_X + 18 > OPPO.enemy_bullet_3_X and SPIDY.spider_Y - 12 < OPPO.enemy_bullet_3_Y and SPIDY.spider_Y + 18 > OPPO.enemy_bullet_3_Y:
+            health -= 1
+
+            OPPO.enemy_bullet_3_X = OPPO.enemy_3_X + 16
+            OPPO.enemy_bullet_3_Y = OPPO.enemy_3_Y + 16
+
+            bul_mov_3 = rd.randint(1, 4)
+            GET_HITTED.play()
+
+        if Special.score >= 30 and SPIDY.spider_X - 12 < OPPO.enemy_bullet_4_X and SPIDY.spider_X + 18 > OPPO.enemy_bullet_4_X and SPIDY.spider_Y - 12 < OPPO.enemy_bullet_4_Y and SPIDY.spider_Y + 18 > OPPO.enemy_bullet_4_Y:
+            health -= 1
+
+            OPPO.enemy_bullet_4_X = OPPO.enemy_4_X + 16
+            OPPO.enemy_bullet_4_Y = OPPO.enemy_4_Y + 16
+
+            bul_mov_4 = rd.randint(1, 4)
+            GET_HITTED.play()
+
+        if Special.score >= 40 and SPIDY.spider_X - 12 < OPPO.enemy_bullet_5_1_X and SPIDY.spider_X + 18 > OPPO.enemy_bullet_5_1_X and SPIDY.spider_Y - 12 < OPPO.enemy_bullet_5_1_Y and SPIDY.spider_Y + 18 > OPPO.enemy_bullet_5_1_Y:
+            health -= 1
+
+            OPPO.enemy_bullet_5_1_X = OPPO.enemy_5_X + 16
+            OPPO.enemy_bullet_5_1_Y = OPPO.enemy_5_Y + 16
+            GET_HITTED.play()
+
+        if Special.score >= 40 and SPIDY.spider_X - 12 < OPPO.enemy_bullet_5_2_X and SPIDY.spider_X + 18 > OPPO.enemy_bullet_5_2_X and SPIDY.spider_Y - 12 < OPPO.enemy_bullet_5_2_Y and SPIDY.spider_Y + 18 > OPPO.enemy_bullet_5_2_Y:
+            health -= 1
+
+            OPPO.enemy_bullet_5_2_X = OPPO.enemy_5_X + 16
+            OPPO.enemy_bullet_5_2_Y = OPPO.enemy_5_Y + 16
+            GET_HITTED.play()
+
+        if Special.score >= 40 and SPIDY.spider_X - 12 < OPPO.enemy_bullet_5_3_X and SPIDY.spider_X + 18 > OPPO.enemy_bullet_5_3_X and SPIDY.spider_Y - 12 < OPPO.enemy_bullet_5_3_Y and SPIDY.spider_Y + 18 > OPPO.enemy_bullet_5_3_Y:
+            health -= 1
+
+            OPPO.enemy_bullet_5_3_X = OPPO.enemy_5_X + 16
+            OPPO.enemy_bullet_5_3_Y = OPPO.enemy_5_Y + 16
+            GET_HITTED.play()
+
+        if Special.score >= 40 and SPIDY.spider_X - 12 < OPPO.enemy_bullet_5_4_X and SPIDY.spider_X + 18 > OPPO.enemy_bullet_5_4_X and SPIDY.spider_Y - 12 < OPPO.enemy_bullet_5_4_Y and SPIDY.spider_Y + 18 > OPPO.enemy_bullet_5_4_Y:
+            health -= 1
+
+            OPPO.enemy_bullet_5_4_X = OPPO.enemy_5_X + 16
+            OPPO.enemy_bullet_5_4_Y = OPPO.enemy_5_Y + 16
+            GET_HITTED.play()
+
+        if Special.score >= 25 and ACR:
+            CR = True
+
+        if CR:
+            ABI.get_crystal()
+
+        if Special.score >= 25 and SPIDY.spider_X - 20 < ABI.crystal_X and SPIDY.spider_X + 40 > ABI.crystal_X and SPIDY.spider_Y - 20 < ABI.crystal_Y and SPIDY.spider_Y + 40 > ABI.crystal_Y:
+            CR = False
+            ACR = False
+
+        if ACR == False and ABB:
+            if choice == 1:
+                DB = True
+
+            elif choice == 2:
+                TL = True
+
+            else:
+                BR_I = True
+
+
+        if DB:
+            health += 1
+            TAKING_HEART.play()
+            DB = False
+            ABB = False
+
+        if TL:
+            ABI.get_teleport()
+
+            if TT:
+                TAKING_TELEPORT.play()
+                TT = False
+
+        if BR_I:
+            ABI.get_barrier_icon()
+
+            if TS:
+                TAKING_SHIELD.play()
+                TS = False
+
+        if BR:
+            ABI.barrier_X = SPIDY.spider_X - 32
+            ABI.barrier_Y = SPIDY.spider_Y - 32
+
+            ABI.barrier_X += movement_X
+            ABI.barrier_Y += movement_Y
+
+            ABI.get_barrier()
+
+            if ABI.barrier_X - 24 < OPPO.enemy_bullet_X and ABI.barrier_X + 120 > OPPO.enemy_bullet_X and ABI.barrier_Y - 24 < OPPO.enemy_bullet_Y and ABI.barrier_Y + 120 > OPPO.enemy_bullet_Y:
+                OPPO.enemy_bullet_X = OPPO.enemy_X + 16
+                OPPO.enemy_bullet_Y = OPPO.enemy_Y + 16
+                bul_mov = rd.randint(1, 4)
+
+            if Special.score >= 10 and ABI.barrier_X - 24 < OPPO.enemy_bullet_2_X and ABI.barrier_X + 120 > OPPO.enemy_bullet_2_X and ABI.barrier_Y - 24 < OPPO.enemy_bullet_2_Y and ABI.barrier_Y + 120 > OPPO.enemy_bullet_2_Y:
+                OPPO.enemy_bullet_2_X = OPPO.enemy_2_X + 16
+                OPPO.enemy_bullet_2_Y = OPPO.enemy_2_Y + 16
+                bul_mov_2 = rd.randint(1, 4) 
+
+            if Special.score >= 20 and ABI.barrier_X - 24 < OPPO.enemy_bullet_3_X and ABI.barrier_X + 120 > OPPO.enemy_bullet_3_X and ABI.barrier_Y - 24 < OPPO.enemy_bullet_3_Y and ABI.barrier_Y + 120 > OPPO.enemy_bullet_3_Y:
+                OPPO.enemy_bullet_3_X = OPPO.enemy_3_X + 16
+                OPPO.enemy_bullet_3_Y = OPPO.enemy_3_Y + 16
+                bul_mov_3 = rd.randint(1, 4)
+
+            if Special.score >= 30 and ABI.barrier_X - 24 < OPPO.enemy_bullet_4_X and ABI.barrier_X + 120 > OPPO.enemy_bullet_4_X and ABI.barrier_Y - 24 < OPPO.enemy_bullet_4_Y and ABI.barrier_Y + 120 > OPPO.enemy_bullet_4_Y:
+                OPPO.enemy_bullet_4_X = OPPO.enemy_4_X + 16
+                OPPO.enemy_bullet_4_Y = OPPO.enemy_4_Y + 16
+                bul_mov_4 = rd.randint(1, 4)
+
+            if TS_2:
+                USING_SHIELD.play()
+                TS_2 = False
+
+
+        if Special.score == 35 and BR:
+            BR = False
+
+        
+        if health == 4:
+            Special.get_heart_1()
+            Special.get_heart_2()
+            Special.get_heart_3()
+            ABI.get_double_heart()
+
+
+        if health == 3:
+            Special.get_heart_1()
+            Special.get_heart_2()
+            Special.get_heart_3()
+
+        if health == 2:
+            Special.get_heart_1()
+            Special.get_heart_2()
+            Special.get_dark_heart_3()
+
+        if health == 1:
+            Special.get_heart_1()
+            Special.get_dark_heart_2()
+            Special.get_dark_heart_3()
+
+        # Losing
+        if health <= 0:
+            Special.get_dark_heart_1()
+            Special.get_dark_heart_2()
+            Special.get_dark_heart_3()
+
+            End.get_game_over()
+
+            DONE = True
+
+            if LS:
+                LOSING.play()
+                LS = False
+
+        # Reaching 50 points (Win)
+        if Special.score == 50:
+            End.get_win()
+            DONE = True
+
+            if WN:
+                WINNING.play()
+                WN = False
+
+
+        # Score Up
+        if SPIDY.spider_X - 12 < Fly.fly_X and SPIDY.spider_X + 32 > Fly.fly_X and SPIDY.spider_Y - 12 < Fly.fly_Y and SPIDY.spider_Y + 32 > Fly.fly_Y:
+            Special.score += 1
+
+            Fly.fly_X = rd.randint(100, 1100)
+            Fly.fly_Y = rd.randint(100, 700)
+
+            EAT_FLY.play()
+
+        
+        SPIDY.get_spidy()
+        Fly.get_fly()
+
+        Special.get_score()
+
+        OPPO.get_bullet_1()
+        OPPO.get_enemy_1()
+
+
+        pygame.display.update()
