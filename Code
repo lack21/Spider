@@ -261,7 +261,7 @@ if __name__ == "__main__":
             screen.blit(self.crystal, (self.crystal_X, self.crystal_Y))
 
         def get_double_heart(self):
-            screen.blit(self.double_heart, (150, 30))
+            screen.blit(self.double_heart, (170, 30))
 
         def get_teleport(self):
             screen.blit(self.teleport, (1060, 30))
@@ -463,7 +463,7 @@ if __name__ == "__main__":
             bullet_X_movement = -1
             bullet_Y_movement = -1
 
-        if OPPO.enemy_bullet_X > 1470 or OPPO.enemy_bullet_X < 0 or OPPO.enemy_bullet_Y > 832 or OPPO.enemy_bullet_Y < 0:
+        if OPPO.enemy_bullet_X > 1480 or OPPO.enemy_bullet_X < 0 or OPPO.enemy_bullet_Y > 832 or OPPO.enemy_bullet_Y < 0:
             OPPO.enemy_bullet_X = OPPO.enemy_X + 16
             OPPO.enemy_bullet_Y = OPPO.enemy_Y + 16
             bul_mov = rd.randint(1, 4)
@@ -492,7 +492,7 @@ if __name__ == "__main__":
                 bullet_2_X_movement = 0
                 bullet_2_Y_movement = 1
 
-            if OPPO.enemy_bullet_2_X > 1470 or OPPO.enemy_bullet_2_X < 0 or OPPO.enemy_bullet_2_Y > 832 or OPPO.enemy_bullet_2_Y < 0:
+            if OPPO.enemy_bullet_2_X > 1480 or OPPO.enemy_bullet_2_X < 0 or OPPO.enemy_bullet_2_Y > 832 or OPPO.enemy_bullet_2_Y < 0:
                 OPPO.enemy_bullet_2_X = OPPO.enemy_2_X + 16
                 OPPO.enemy_bullet_2_Y = OPPO.enemy_2_Y + 16
                 bul_mov_2 = rd.randint(1, 4)
@@ -522,7 +522,7 @@ if __name__ == "__main__":
                 bullet_3_X_movement = -1
                 bullet_3_Y_movement = -1
 
-            if OPPO.enemy_bullet_3_X > 1470 or OPPO.enemy_bullet_3_X < 0 or OPPO.enemy_bullet_3_Y > 832 or OPPO.enemy_bullet_3_Y < 0:
+            if OPPO.enemy_bullet_3_X > 1480 or OPPO.enemy_bullet_3_X < 0 or OPPO.enemy_bullet_3_Y > 832 or OPPO.enemy_bullet_3_Y < 0:
                 OPPO.enemy_bullet_3_X = OPPO.enemy_3_X + 16
                 OPPO.enemy_bullet_3_Y = OPPO.enemy_3_Y + 16
                 bul_mov_3 = rd.randint(1, 4)
@@ -552,7 +552,7 @@ if __name__ == "__main__":
                 bullet_4_X_movement = 0
                 bullet_4_Y_movement = 1
 
-            if OPPO.enemy_bullet_4_X > 1200 or OPPO.enemy_bullet_4_X < 0 or OPPO.enemy_bullet_4_Y > 800 or OPPO.enemy_bullet_4_Y < 0:
+            if OPPO.enemy_bullet_4_X > 1480 or OPPO.enemy_bullet_4_X < 0 or OPPO.enemy_bullet_4_Y > 832 or OPPO.enemy_bullet_4_Y < 0:
                 OPPO.enemy_bullet_4_X = OPPO.enemy_4_X + 16
                 OPPO.enemy_bullet_4_Y = OPPO.enemy_4_Y + 16
                 bul_mov_4 = rd.randint(1, 4)
@@ -570,13 +570,13 @@ if __name__ == "__main__":
                 OPPO.enemy_bullet_5_3_Y += 1
                 OPPO.enemy_bullet_5_4_Y -= 1
 
-            if OPPO.enemy_bullet_5_1_X > 1200:
+            if OPPO.enemy_bullet_5_1_X > 1480:
                 OPPO.enemy_bullet_5_1_X = OPPO.enemy_5_X + 16
 
             if OPPO.enemy_bullet_5_2_X < 0:
                 OPPO.enemy_bullet_5_2_X = OPPO.enemy_5_X + 16
 
-            if OPPO.enemy_bullet_5_3_Y > 800:
+            if OPPO.enemy_bullet_5_3_Y > 832:
                 OPPO.enemy_bullet_5_3_Y = OPPO.enemy_5_Y + 16
 
             if OPPO.enemy_bullet_5_4_Y < 0:
