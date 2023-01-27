@@ -11,22 +11,16 @@ if __name__ == "__main__":
     pygame.init()
 
     # Screen
-    WIDTH = 1200
-    HEIGHT = 800
-
-    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 
     # Background
-    background = pygame.image.load("spi_cave.jpg")
-    background_2 = pygame.image.load("spi_cave_2.jpg")
-
-    BK = True
+    background = pygame.image.load("Images/spi_cave.jpg")
 
     # Title
     pygame.display.set_caption("Spider Cave")
 
     # Icon
-    icon = pygame.image.load("spider_icon.png")
+    icon = pygame.image.load("Images/spider_icon.png")
 
     pygame.display.set_icon(icon)
 
@@ -42,7 +36,7 @@ if __name__ == "__main__":
         def get_spidy(self):
             screen.blit(self.spider, (self.spider_X, self.spider_Y))
 
-    Spider_IMG = pygame.image.load("spider_left.png")
+    Spider_IMG = pygame.image.load("Images/spider_left.png")
     Spider_X = 500
     Spider_Y = 330
 
@@ -62,7 +56,7 @@ if __name__ == "__main__":
         def get_fly(self):
             screen.blit(self.fly, (self.fly_X, self.fly_Y))
 
-    fly = pygame.image.load("fly.png")
+    fly = pygame.image.load("Images/fly.png")
     fly_x = rd.randint(100, 1100)
     fly_y = rd.randint(100, 700)
 
@@ -164,11 +158,11 @@ if __name__ == "__main__":
             screen.blit(self.enemy_bullet_5_4, (self.enemy_bullet_5_4_X, self.enemy_bullet_5_4_Y))
 
 
-    enemy = pygame.image.load("robot_1.png")
+    enemy = pygame.image.load("Images/robot_1.png")
     enemy_x = rd.randint(100, 1100)
     enemy_y = rd.randint(100, 700)
 
-    bullet = pygame.image.load("bullet.png")
+    bullet = pygame.image.load("Images/bullet.png")
     bullet_x = enemy_x + 16
     bullet_y = enemy_y + 16
 
@@ -178,11 +172,11 @@ if __name__ == "__main__":
     bul_mov = rd.randint(1, 4)
 
 
-    enemy_2 = pygame.image.load("robot_2.png")
+    enemy_2 = pygame.image.load("Images/robot_2.png")
     enemy_2_x = rd.randint(100, 1100)
     enemy_2_y = rd.randint(100, 700)
 
-    bullet_2 = pygame.image.load("bullet_2.png")
+    bullet_2 = pygame.image.load("Images/bullet_2.png")
     bullet_2_x = enemy_2_x + 16
     bullet_2_y = enemy_2_y + 16
 
@@ -192,11 +186,11 @@ if __name__ == "__main__":
     bul_mov_2 = rd.randint(1, 4)
 
 
-    enemy_3 = pygame.image.load("robot_1.png")
+    enemy_3 = pygame.image.load("Images/robot_1.png")
     enemy_3_x = rd.randint(100, 1100)
     enemy_3_y = rd.randint(100, 700)
 
-    bullet_3 = pygame.image.load("bullet.png")
+    bullet_3 = pygame.image.load("Images/bullet.png")
     bullet_3_x = enemy_x + 16
     bullet_3_y = enemy_y + 16
 
@@ -206,11 +200,11 @@ if __name__ == "__main__":
     bul_mov_3 = rd.randint(1, 4)
 
 
-    enemy_4 = pygame.image.load("robot_2.png")
+    enemy_4 = pygame.image.load("Images/robot_2.png")
     enemy_4_x = rd.randint(100, 1100)
     enemy_4_y = rd.randint(100, 700)
 
-    bullet_4 = pygame.image.load("bullet_2.png")
+    bullet_4 = pygame.image.load("Images/bullet_2.png")
     bullet_4_x = enemy_2_x + 16
     bullet_4_y = enemy_2_y + 16
 
@@ -220,26 +214,26 @@ if __name__ == "__main__":
     bul_mov_4 = rd.randint(1, 4)
 
 
-    enemy_5 = pygame.image.load("robot_3.png")
+    enemy_5 = pygame.image.load("Images/robot_3.png")
     enemy_5_x = rd.randint(300, 900)
     enemy_5_y = rd.randint(200, 600)
 
-    bullet_5_1 = pygame.image.load("bullet_3.png")
+    bullet_5_1 = pygame.image.load("Images/bullet_3.png")
     bullet_5_1_x = enemy_5_x + 16
     bullet_5_1_y = enemy_5_y + 16
 
 
-    bullet_5_2 = pygame.image.load("bullet_3.png")
+    bullet_5_2 = pygame.image.load("Images/bullet_3.png")
     bullet_5_2_x = enemy_5_x + 16
     bullet_5_2_y = enemy_5_y + 16
 
 
-    bullet_5_3 = pygame.image.load("bullet_3.png")
+    bullet_5_3 = pygame.image.load("Images/bullet_3.png")
     bullet_5_3_x = enemy_5_x + 16
     bullet_5_3_y = enemy_5_y + 16
 
 
-    bullet_5_4 = pygame.image.load("bullet_3.png")
+    bullet_5_4 = pygame.image.load("Images/bullet_3.png")
     bullet_5_4_x = enemy_5_x + 16
     bullet_5_4_y = enemy_5_y + 16
 
@@ -278,18 +272,18 @@ if __name__ == "__main__":
         def get_barrier_icon(self):
             screen.blit(self.barrier_icon, (1060, 30))
 
-    crystal = pygame.image.load("crystal.png")
+    crystal = pygame.image.load("Images/crystal.png")
     crystal_x = rd.randint(100, 1100)
     crystal_y = rd.randint(100, 700)
 
-    double_heart = pygame.image.load("heart.png")
+    double_heart = pygame.image.load("Images/heart.png")
 
-    teleport = pygame.image.load("teleport_icon.png")
+    teleport = pygame.image.load("Images/teleport_icon.png")
 
-    barrier = pygame.image.load("shield.png")
+    barrier = pygame.image.load("Images/shield.png")
     barrier_x = SPIDY.spider_X
     barrier_y = SPIDY.spider_Y
-    barrier_icon = pygame.image.load("shield_icon.png")
+    barrier_icon = pygame.image.load("Images/shield_icon.png")
 
     ABB = True
 
@@ -319,31 +313,31 @@ if __name__ == "__main__":
             self.score = score
 
         def get_heart_1(self):
-            screen.blit(self.heart, (30, 30))
+            screen.blit(self.heart, (50, 30))
 
         def get_heart_2(self):
-            screen.blit(self.heart, (70, 30))
+            screen.blit(self.heart, (90, 30))
 
         def get_heart_3(self):
-            screen.blit(self.heart, (110, 30))
+            screen.blit(self.heart, (130, 30))
 
         
         def get_dark_heart_1(self):
-            screen.blit(self.dark_heart, (30, 30))
+            screen.blit(self.dark_heart, (50, 30))
 
         def get_dark_heart_2(self):
-            screen.blit(self.dark_heart, (70, 30))
+            screen.blit(self.dark_heart, (90, 30))
 
         def get_dark_heart_3(self):
-            screen.blit(self.dark_heart, (110, 30))
+            screen.blit(self.dark_heart, (130, 30))
 
         
         def get_score(self):
             score_text = text_score.render(f"Score : {str(self.score)}", True, (100, 40, 140))
-            screen.blit(score_text, (480, 25))
+            screen.blit(score_text, (700, 25))
 
-    heart = pygame.image.load("heart.png")
-    dark_heart = pygame.image.load("dark_heart.png")
+    heart = pygame.image.load("Images/heart.png")
+    dark_heart = pygame.image.load("Images/dark_heart.png")
 
     score = 0
     health = 3
@@ -371,16 +365,16 @@ if __name__ == "__main__":
 
 
     # Sound
-    WINNING = pygame.mixer.Sound("TTT_win.wav")
-    LOSING = pygame.mixer.Sound("losing.wav")
-    GET_HITTED = pygame.mixer.Sound("get_punched.wav")
-    EAT_FLY = pygame.mixer.Sound("eating.wav")
+    WINNING = pygame.mixer.Sound("Sound/TTT_win.wav")
+    LOSING = pygame.mixer.Sound("Sound/losing.wav")
+    GET_HITTED = pygame.mixer.Sound("Sound/get_punched.wav")
+    EAT_FLY = pygame.mixer.Sound("Sound/eating.wav")
 
-    TAKING_TELEPORT = pygame.mixer.Sound("taking_teleport.wav")
-    USING_TELEPORT = pygame.mixer.Sound("using_teleport.wav")
-    TAKING_HEART = pygame.mixer.Sound("taking_heart.wav")
-    TAKING_SHIELD = pygame.mixer.Sound("taking_shield.wav")
-    USING_SHIELD = pygame.mixer.Sound("using_shield.wav")
+    TAKING_TELEPORT = pygame.mixer.Sound("Sound/taking_teleport.wav")
+    USING_TELEPORT = pygame.mixer.Sound("Sound/using_teleport.wav")
+    TAKING_HEART = pygame.mixer.Sound("Sound/taking_heart.wav")
+    TAKING_SHIELD = pygame.mixer.Sound("Sound/taking_shield.wav")
+    USING_SHIELD = pygame.mixer.Sound("Sound/using_shield.wav")
 
     WN = True
     LS = True
@@ -394,12 +388,7 @@ if __name__ == "__main__":
 
     running = True
     while running:
-        if BK:
-            screen.blit(background, (0, 0))
-
-        else:
-            screen.blit(background_2, (0, 0))
-
+        screen.blit(background, (0, 0))
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -409,24 +398,22 @@ if __name__ == "__main__":
                 if event.key == pygame.K_ESCAPE:
                     running = False
 
-                if event.key == pygame.K_p:
-                    BK = not(BK)
                 if not(DONE):
                     if event.key == pygame.K_LEFT and SPIDY.spider_X > 0:
-                        SPIDY.spider = pygame.image.load("spider_left.png")
-                        movement_X = -0.8
+                        SPIDY.spider = pygame.image.load("Images/spider_left.png")
+                        movement_X = -1
 
-                    if event.key == pygame.K_RIGHT and SPIDY.spider_X < 1134:
-                        SPIDY.spider = pygame.image.load("spider_right.png")
-                        movement_X = 0.8
+                    if event.key == pygame.K_RIGHT and SPIDY.spider_X < 1550:
+                        SPIDY.spider = pygame.image.load("Images/spider_right.png")
+                        movement_X = 1
 
                     if event.key == pygame.K_UP and SPIDY.spider_Y > 0:
-                        SPIDY.spider = pygame.image.load("spider_up.png")
-                        movement_Y = -0.8
+                        SPIDY.spider = pygame.image.load("Images/spider_up.png")
+                        movement_Y = -1
 
-                    if event.key == pygame.K_DOWN and SPIDY.spider_Y < 734:
-                        SPIDY.spider = pygame.image.load("spider_down.png")
-                        movement_Y = 0.8
+                    if event.key == pygame.K_DOWN and SPIDY.spider_Y < 800:
+                        SPIDY.spider = pygame.image.load("Images/spider_down.png")
+                        movement_Y = 1
 
                     if event.key == pygame.K_SPACE and TL:
                         SPIDY.spider_X = rd.randint(100, 1100)
@@ -450,10 +437,10 @@ if __name__ == "__main__":
         SPIDY.spider_X += movement_X
         SPIDY.spider_Y += movement_Y
 
-        if SPIDY.spider_X < 0 or SPIDY.spider_X > 1134:
+        if SPIDY.spider_X < 0 or SPIDY.spider_X > 1470:
             movement_X = 0
 
-        if SPIDY.spider_Y < 0 or SPIDY.spider_Y > 734:
+        if SPIDY.spider_Y < 0 or SPIDY.spider_Y > 796:
             movement_Y = 0
 
         if not(DONE):
@@ -476,7 +463,7 @@ if __name__ == "__main__":
             bullet_X_movement = -1
             bullet_Y_movement = -1
 
-        if OPPO.enemy_bullet_X > 1200 or OPPO.enemy_bullet_X < 0 or OPPO.enemy_bullet_Y > 800 or OPPO.enemy_bullet_Y < 0:
+        if OPPO.enemy_bullet_X > 1470 or OPPO.enemy_bullet_X < 0 or OPPO.enemy_bullet_Y > 832 or OPPO.enemy_bullet_Y < 0:
             OPPO.enemy_bullet_X = OPPO.enemy_X + 16
             OPPO.enemy_bullet_Y = OPPO.enemy_Y + 16
             bul_mov = rd.randint(1, 4)
@@ -505,7 +492,7 @@ if __name__ == "__main__":
                 bullet_2_X_movement = 0
                 bullet_2_Y_movement = 1
 
-            if OPPO.enemy_bullet_2_X > 1200 or OPPO.enemy_bullet_2_X < 0 or OPPO.enemy_bullet_2_Y > 800 or OPPO.enemy_bullet_2_Y < 0:
+            if OPPO.enemy_bullet_2_X > 1470 or OPPO.enemy_bullet_2_X < 0 or OPPO.enemy_bullet_2_Y > 832 or OPPO.enemy_bullet_2_Y < 0:
                 OPPO.enemy_bullet_2_X = OPPO.enemy_2_X + 16
                 OPPO.enemy_bullet_2_Y = OPPO.enemy_2_Y + 16
                 bul_mov_2 = rd.randint(1, 4)
@@ -535,7 +522,7 @@ if __name__ == "__main__":
                 bullet_3_X_movement = -1
                 bullet_3_Y_movement = -1
 
-            if OPPO.enemy_bullet_3_X > 1200 or OPPO.enemy_bullet_3_X < 0 or OPPO.enemy_bullet_3_Y > 800 or OPPO.enemy_bullet_3_Y < 0:
+            if OPPO.enemy_bullet_3_X > 1470 or OPPO.enemy_bullet_3_X < 0 or OPPO.enemy_bullet_3_Y > 832 or OPPO.enemy_bullet_3_Y < 0:
                 OPPO.enemy_bullet_3_X = OPPO.enemy_3_X + 16
                 OPPO.enemy_bullet_3_Y = OPPO.enemy_3_Y + 16
                 bul_mov_3 = rd.randint(1, 4)
@@ -803,5 +790,16 @@ if __name__ == "__main__":
         OPPO.get_bullet_1()
         OPPO.get_enemy_1()
 
+        # Time
+        clock = pygame.time.Clock()
+        if DONE == False:
+            clocker = round(pygame.time.get_ticks() / 1000, 2)
+        clock_text = pygame.font.Font("freesansbold.ttf", 40)
+
+        def time():
+            clock_time = clock_text.render(str(clocker), True, (200, 200, 200))
+            screen.blit(clock_time, (1400, 30))
+
+        time()
 
         pygame.display.update()
